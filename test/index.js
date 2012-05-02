@@ -5,7 +5,7 @@
 // Our main mocha target. Point mocha at this dir, and watch stuff happen.
 //
 // Copyright (c) 2012 Lee Olayvar <leeolayvar@gmail.com>
-// MIT Licensed 
+// MIT Licensed
 //
 /*jshint asi: true, laxbreak: true*/
 

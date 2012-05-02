@@ -33,7 +33,6 @@ describe('Tork', function () {
       // some basic tork functions exist.
       should.exist(tork.get)
       should.exist(tork.handle)
-      should.exist(undefined)
     })
     
     it('should be a unique object each execution', function () {
