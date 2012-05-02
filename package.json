@@ -1,0 +1,19 @@
+{
+  "name": "tork",
+  "version": "0.0.0",
+  "description": "",
+  "author": "leeolayvar <leeolayvar@gmail.com> http://leeolayvar.com",
+  "repositories": [{
+    "type": "git",
+    "url": "git://github.com/leeolayvar/tork.git"
+  }],
+  "scripts": {
+    "test": "test/index.js"
+  },
+  "devDependencies": {
+    "mocha": "0.14.x",
+    "should": "0.5.x"
+  },
+  "engine": "node",
+  "main": "./lib/index.js"
+}
