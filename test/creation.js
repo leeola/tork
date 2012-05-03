@@ -15,14 +15,14 @@ var before = global.before
   , describe = global.describe
   , it = global.it
 
-describe('Tork', function () {
+describe('tork', function () {
   var tork_lib = require('../lib')
   
   it('should return a function', function () {
     tork_lib.should.be.an.instanceof(Function)
   })
   
-  describe('()', function () {
+  describe('#()', function () {
     var tork
     beforeEach(function () {
       tork = tork_lib()

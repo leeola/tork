@@ -14,4 +14,4 @@
 // to recognize tests within the /test dir. I'm likely doing
 // something wrong, but this works fine for now.
 require('./creation')
-//require('./routing')
+require('./routing')
