@@ -14,7 +14,7 @@ var before = global.before
   , describe = global.describe
   , it = global.it
 
-describe('Tork', function () {
+describe('tork', function () {
   var tork_lib = require('../lib')
   
   describe('#get()', function () {
