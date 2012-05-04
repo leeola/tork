@@ -7,7 +7,6 @@
 //
 /*jshint asi: true, laxbreak: true*/
 var should = require('should')
-var tork_lib = require('../lib')
 
 // These are here so my IDE will shut the hell up.
 var before = global.before
