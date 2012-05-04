@@ -27,7 +27,7 @@ describe('Tork', function () {
     })
     
     it('should exist', function () {
-      should.exist(tork.get)
+      should.exist(app.get)
     })
     
     it('should be called without a pattern', function (done) {
