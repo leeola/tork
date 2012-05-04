@@ -15,3 +15,4 @@
 // something wrong, but this works fine for now.
 require('./creation')
 require('./routing')
+require('./utils')
