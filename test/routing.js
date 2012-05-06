@@ -30,25 +30,26 @@ describe('tork', function () {
       should.exist(app.get)
     })
     
-    it('should be called without a pattern', function (done) {
-      app.get(function () {
-        done()
-      })
-      app.handle(req)
+    it('should handle a single callback', function () {
+      app.get(function () {})
+      should.not.exist(app.stack[0].route)
+      app.stack[0].method.should.equal('get')
+      app.stack[0].handler.should.be.a('function')
     })
     
-    it('should be called with a matching pattern', function (done) {
-      app.get(function () {
-        done()
-      })
-      app.handle(req)
+    it('should handle a route and a callback', function () {
+      app.get('/', function () {})
+      // Match the regex route.
+      app.stack[0].route.should.equal(\^\/$\)
+      app.stack[0].method.should.equal('get')
+      app.stack[0].handler.should.be.a('function')
     })
     
-    it('should not be matched with an invalid pattern', function () {
-      app.get('/foo', function () {
-        throw new Error('Invalid pattern matched.')
-      })
-      app.handle(req)
+    it('should properly append the stack', function () {
+      app.get('/0', function () {})
+      app.get('/1', function () {})
+      app.stack[0].route.should.equal(\^\/0$\)
+      app.stack[1].route.should.equal(\^\/1$\)
     })
   })
 })
