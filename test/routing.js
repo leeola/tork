@@ -40,7 +40,7 @@ describe('tork', function () {
     it('should handle a route and a callback', function () {
       app.get('/', function () {})
       // Match the regex route.
-      app.stack[0].route.should.equal(/^\/$/)
+      '/'.should.match(app.stack[0].route)
       app.stack[0].method.should.equal('get')
       app.stack[0].handler.should.be.a('function')
     })
@@ -48,8 +48,8 @@ describe('tork', function () {
     it('should properly append the stack', function () {
       app.get('/0', function () {})
       app.get('/1', function () {})
-      app.stack[0].route.should.equal(/^\/0$/)
-      app.stack[1].route.should.equal(/^\/1$/)
+      '/0'.should.match(app.stack[0].route)
+      '/1'.should.match(app.stack[1].route)
     })
   })
 })
