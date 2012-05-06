@@ -38,7 +38,7 @@ describe('utils', function () {
       })
       
       it('should not match /foo', function () {
-        '/foo'.should.match(regex)
+        '/foo'.should.not.match(regex)
       })
     })
     
