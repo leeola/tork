@@ -20,9 +20,27 @@ describe('utils', function () {
   describe('#format_route_pattern()', function () {
     var frp = utils.format_route_pattern
     
-    it('should return a RegExp when given a string')
+    it('should return a RegExp when given a string', function () {
+      var return_value = frp('/')
+      return_value.should.be.an.instanceof(RegExp)
+    })
     
-    it('should return a RegExp when given a RegExp')
+    it('should return a RegExp when given a RegExp', function () {
+      var return_value = frp(/\//)
+      return_value.should.be.an.instanceof(RegExp)
+    })
+    
+    describe('/', function () {
+      var regex = frp('/')
+      
+      it('should match /', function () {
+        '/'.should.match(regex)
+      })
+      
+      it('should not match /foo', function () {
+        '/foo'.should.match(regex)
+      })
+    })
     
     describe('/*', function () {
       var regex = frp('/*')
@@ -33,6 +51,31 @@ describe('utils', function () {
       
       it('should match /foo', function () {
         '/foo'.should.match(regex)
+      })
+    })
+    
+    describe('/*/bar', function () {
+      var regex = frp('/*/bar')
+      
+      it('should match /foo/bar', function () {
+        '/foo/bar'.should.match(regex)
+      })
+      
+      it('should not match /foo/bar/baz', function () {
+        '/foo/bar/baz'.should.not.match(regex)
+      })
+    })
+    
+    // Assure we properly handle the dot character
+    describe('/foo.html', function () {
+      var regex = frp('/foo.html')
+      
+      it('should match /foo.html', function () {
+        '/foo.html'.should.match(regex)
+      })
+      
+      it('should not match /fooxhtml', function () {
+        '/fooxhtml'.should.not.match(regex)
       })
     })
   })
