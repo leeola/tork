@@ -52,4 +52,10 @@ describe('tork', function () {
       '/1'.should.match(app.stack[1].route)
     })
   })
+  
+  describe('#all()')
+  
+  describe('#use()')
+  
+  describe('#handle()')
 })
