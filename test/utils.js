@@ -16,4 +16,12 @@ var before = global.before
 
 describe('utils', function () {
   var utils = require('../lib/utils')
+  
+  describe('#format_route_pattern()', function () {
+    var frp = utils.format_route_pattern
+    
+    it('should return ^/$ when given /', function () {
+      
+    })
+  })
 })
