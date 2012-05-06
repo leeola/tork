@@ -20,8 +20,20 @@ describe('utils', function () {
   describe('#format_route_pattern()', function () {
     var frp = utils.format_route_pattern
     
-    it('should return ^/$ when given /', function () {
+    it('should return a RegExp when given a string')
+    
+    it('should return a RegExp when given a RegExp')
+    
+    describe('/*', function () {
+      var regex = frp('/*')
+    
+      it('should match /', function () {
+        '/'.should.match(regex)
+      })
       
+      it('should match /foo', function () {
+        '/foo'.should.match(regex)
+      })
     })
   })
 })
