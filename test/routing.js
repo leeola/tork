@@ -60,7 +60,7 @@ describe('tork', function () {
     
     it('should be put in the stack', function () {
       app.get(function () {})
-      should.not.exist(app.stack[0].method)
+      app.stack[0].method.should.equal('get')
       should.not.exist(app.stack[0].route)
       app.stack[0].handler.should.be.a('function')
     })
