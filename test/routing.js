@@ -19,11 +19,9 @@ describe('tork', function () {
   
   describe('#get()', function () {
     var app
-      , req
     
     beforeEach(function () {
       app = tork_lib()
-      req = { 'url': '/', 'method': 'GET' }
     })
     
     it('should exist', function () {
@@ -55,11 +53,9 @@ describe('tork', function () {
   
   describe('#all()', function () {
     var app
-      , req
     
     beforeEach(function () {
       app = tork_lib()
-      req = { 'url': '/', 'method': 'GET' }
     })
     
     it('should be put in the stack', function () {
@@ -72,11 +68,9 @@ describe('tork', function () {
   
   describe('#use()', function () {
     var app
-      , req
     
     beforeEach(function () {
       app = tork_lib()
-      req = { 'url': '/', 'method': 'GET' }
     })
     
     it('should be put in the stack', function () {
