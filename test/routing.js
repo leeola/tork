@@ -82,6 +82,52 @@ describe('tork', function () {
   })
   
   describe('#handle()', function () {
+    var app
+      , req
     
+    beforeEach(function () {
+      app = tork_lib()
+      req = { 'url': '/', 'method': 'GET' }
+    })
+    
+    it('should call the matching handler', function (done) {
+      app.all(function () { done() })
+      app.handle(req)
+    })
+    
+    it('should not call non-matching handlers', function (done) {
+      app.get('/foo', function () {
+        throw new Error('AssertionError: get:/foo should not be matched')
+      })
+      app.put('/', function () {
+        throw new Error('AssertionError: put:/ should not be matched')
+      })
+      app.handle(req)
+    })
+    
+    it('should call the first item added, not the last', function (done) {
+      app.all(function () { done() })
+      app.all(function () {
+        throw new Error('AssertionError: Last item called before first item.')
+      })
+      app.handle(req)
+    })
+  })
+  
+  describe('next()', function () {
+    var app
+      , req
+    
+    beforeEach(function () {
+      app = tork_lib()
+      req = { 'url': '/', 'method': 'GET' }
+    })
+    
+    it('should call the next item in the stack that matches', function (done) {
+      app.all(function (next) { next() })
+      app.all(function (next) { next() })
+      app.all(function (next) { done() })
+      app.handle(req)
+    })
   })
 })
