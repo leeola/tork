@@ -124,9 +124,9 @@ describe('tork', function () {
     })
     
     it('should call the next item in the stack that matches', function (done) {
-      app.all(function (next) { next() })
-      app.all(function (next) { next() })
-      app.all(function (next) { done() })
+      app.all(function (req, next) { next() })
+      app.all(function (req, next) { next() })
+      app.all(function (req, next) { done() })
       app.handle(req)
     })
   })
