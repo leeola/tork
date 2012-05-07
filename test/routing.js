@@ -53,9 +53,15 @@ describe('tork', function () {
     })
   })
   
-  describe('#all()')
+  describe('#all()', function () {
+    
+  })
   
-  describe('#use()')
+  describe('#use()', function () {
+    
+  })
   
-  describe('#handle()')
+  describe('#handle()', function () {
+    
+  })
 })
