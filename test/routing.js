@@ -75,8 +75,8 @@ describe('tork', function () {
     
     it('should be put in the stack', function () {
       app.use(function () {})
+      should.not.exist(app.stack[0].method)
       should.not.exist(app.stack[0].route)
-      should.not.exist(app.stack[0].get)
       app.stack[0].handler.should.be.a('function')
     })
   })
@@ -127,6 +127,38 @@ describe('tork', function () {
       app.all(function (req, next) { next() })
       app.all(function (req, next) { next() })
       app.all(function (req, next) { done() })
+      app.handle(req)
+    })
+    
+    it('should pass given objects to the next callback', function (done) {
+      app.all(function (req, next) {
+        next('foo')
+      })
+      app.all(function (req, foo, next) {
+        foo.should.equal('foo')
+        done()
+      })
+      app.handle(req)
+    })
+    
+    it('should pass given objects to the next callback, in order',
+    function (done) {
+      app.all(function (req, next) {
+        next('foo')
+      })
+      app.all(function (req, foo, next) {
+        next('bar')
+      })
+      app.all(function (req, foo, bar, next) {
+        next('baz')
+      })
+      app.all(function (req, foo, bar, baz, next) {
+        foo.should.equal('foo')
+        bar.should.equal('bar')
+        baz.should.equal('baz')
+        next.should.be.a('function')
+        done()
+      })
       app.handle(req)
     })
   })
