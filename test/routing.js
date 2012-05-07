@@ -54,11 +54,37 @@ describe('tork', function () {
   })
   
   describe('#all()', function () {
+    var app
+      , req
     
+    beforeEach(function () {
+      app = tork_lib()
+      req = { 'url': '/', 'method': 'GET' }
+    })
+    
+    it('should be put in the stack', function () {
+      app.all(function () {})
+      should.not.exist(app.stack[0].route)
+      should.not.exist(app.stack[0].get)
+      app.stack[0].handler.should.be.a('function')
+    })
   })
   
   describe('#use()', function () {
+    var app
+      , req
     
+    beforeEach(function () {
+      app = tork_lib()
+      req = { 'url': '/', 'method': 'GET' }
+    })
+    
+    it('should be put in the stack', function () {
+      app.use(function () {})
+      should.not.exist(app.stack[0].route)
+      should.not.exist(app.stack[0].get)
+      app.stack[0].handler.should.be.a('function')
+    })
   })
   
   describe('#handle()', function () {
