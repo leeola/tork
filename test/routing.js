@@ -95,7 +95,7 @@ describe('tork', function () {
       app.handle(req)
     })
     
-    it('should not call non-matching handlers', function (done) {
+    it('should not call non-matching handlers', function () {
       app.get('/foo', function () {
         throw new Error('AssertionError: get:/foo should not be matched')
       })
