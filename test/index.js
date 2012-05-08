@@ -13,6 +13,5 @@
 // Currently this seems to be the only way i can get mocha
 // to recognize tests within the /test dir. I'm likely doing
 // something wrong, but this works fine for now.
-require('./creation')
-require('./routing')
+require('./tork')
 require('./utils')
