@@ -156,6 +156,17 @@ describe('tork', function () {
       listeners.foo = function () { done() }
       app.listen('foo')
     })
+    
+    it('should support multiple listener arguments', function (done) {
+      var foo_called = false
+      var listeners = require('../lib/listeners')
+      listeners.foo = function () { foo_called = true }
+      listeners.bar = function () {
+        if (foo_called)
+          done()
+      }
+      app.listen('foo', 'bar')
+    })
   })
   
   describe('next()', function () {
