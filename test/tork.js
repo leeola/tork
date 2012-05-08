@@ -144,6 +144,20 @@ describe('tork', function () {
     })
   })
   
+  describe('#listen()', function () {
+    var app
+    
+    beforeEach(function () {
+      app = tork_lib()
+    })
+    
+    it('should call the listener module as a function', function (done) {
+      var listeners = require('../lib/listeners')
+      listeners.foo = function () { done() }
+      app.listen('foo')
+    })
+  })
+  
   describe('next()', function () {
     var app
       , req
