@@ -78,5 +78,24 @@ describe('utils', function () {
         '/fooxhtml'.should.not.match(regex)
       })
     })
+    
+    describe('/baz.html {hostname:foo.com}', function () {
+      var regex = frp('/baz.html', {'hostname': 'foo.com'})
+      
+      it('should match foo.com/baz.html', function () {
+        'foo.com/baz.html'.should.match(regex)
+      })
+      
+      // Note that the `app.all()` function *would* match /baz.html,
+      // but that is only because the app is converting the root /baz.html
+      // into hostname/baz.html.
+      it('should not match /baz.html', function () {
+        '/baz.html'.should.match(regex)
+      })
+      
+      it('should not match bar.com/baz.html', function () {
+        'bar.com/baz.html'.should.match(regex)
+      })
+    })
   })
 })
