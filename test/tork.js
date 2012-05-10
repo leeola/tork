@@ -86,7 +86,7 @@ describe('tork', function () {
     })
     
     it('should call no env functions', function (done) {
-      app.configure(function () { done() }
+      app.configure(function () { done() })
     })
     
     it('should call matching functions', function (done) {
@@ -97,6 +97,10 @@ describe('tork', function () {
       app.configure('no-match', function () {
         throw new Error('Function should not have been called.')
       })
+    })
+    
+    it('should support multiple envs', function (done) {
+      app.configure('foo', 'test', 'bar', function () { done() })
     })
   })
   
