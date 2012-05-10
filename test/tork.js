@@ -77,6 +77,33 @@ describe('tork', function () {
     })
   })
   
+  describe('#configure()', function () {
+    var app
+    
+    beforeEach(function () {
+      app = tork_lib()
+      app.env = 'test'
+    })
+    
+    it('should call the no env function', function (done) {
+      app.configure(function () { done() })
+    })
+    
+    it('should call the matching function', function (done) {
+      app.configure('test', function () { done() })
+    })
+    
+    it('should not call the non-matching function', function () {
+      app.configure('no-match', function () {
+        throw new Error('Function should not have been called.')
+      })
+    })
+    
+    it('should support multiple envs', function (done) {
+      app.configure('foo', 'test', 'bar', function () { done() })
+    })
+  })
+  
   describe('#get()', function () {
     var app
     
