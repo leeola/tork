@@ -85,15 +85,15 @@ describe('tork', function () {
       app.env = 'test'
     })
     
-    it('should call no env functions', function (done) {
+    it('should call no env function', function (done) {
       app.configure(function () { done() })
     })
     
-    it('should call matching functions', function (done) {
+    it('should call a matching function', function (done) {
       app.configure('test', function () { done() })
     })
     
-    it('should not call non-matching functions', function () {
+    it('should not call a non-matching function', function () {
       app.configure('no-match', function () {
         throw new Error('Function should not have been called.')
       })
