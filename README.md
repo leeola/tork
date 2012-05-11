@@ -4,7 +4,7 @@
 ## Description
 
 Tork.js is a work in progress that allows for common client side tasks to
-be written in a similar app centric server side style. It does this with a
+be written in a familiar app centric server side style. It does this with a
 code design modeled after Express.js, and with a dependancy of server side
 compilers such as Browserify.
 
@@ -80,7 +80,10 @@ goodness and ignore the poorly written http module!
 app.listen(require('./better_than_http'), require('./something_else'))
 ```
 
-And that's basically it!
+Next you would point Browserify to this file, start the server, and
+that's basically it!
+
+For more examples, view the source of `./examples/`
 
 ## Middleware
 
