@@ -37,6 +37,22 @@ app.get('#raz', function (req) {
 })
 ```
 
+We can also configure like Express!
+*Please remember, this is on the client side.. so don't put anything stupid
+in there.. like your database auth..*
+
+```js
+app.configure('development', function () {
+  app.use(tork.middleware.logger({level: 'debug'}))
+  app.log('We\'re doing development stuffs')
+})
+
+app.configure('production', function () {
+  app.use(tork.middleware.logger({level: 'error'}))
+  app.log('We\'re doing production stuffs')
+})
+```
+
 Middleware is also supported
 
 ```js
