@@ -38,7 +38,8 @@ app.get('#raz', function (req) {
 ```
 
 We can also configure like Express!
-*Please remember, this is on the client side.. so don't put anything stupid
+
+Please remember, this is on the client side.. *so don't put anything stupid
 in there.. like your database auth..*
 
 ```js
