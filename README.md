@@ -28,11 +28,11 @@ var app = tork()
 Then you're free to define Express-ish style handlers on the methods.
 
 ```js
-app.get('/bar', function (req) {
+app.get('/foo', function (req) {
   alert('Hello /foo')
 })
 
-app.get('#raz', function (req) {
+app.get('#bar', function (req) {
   alert('Hello #bar')
 })
 ```
