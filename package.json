@@ -1,12 +1,20 @@
 {
   "name": "tork",
-  "version": "0.0.0",
-  "description": "",
-  "author": "leeolayvar <leeolayvar@gmail.com> http://leeolayvar.com",
-  "repositories": [{
+  "version": "0.0.2",
+  "description": "Client side routing and middleware",
+  "keywords": [
+    "route",
+    "middleware",
+    "browser"
+  ],
+  "author": "leeolayvar <leeolayvar@gmail.com> (http://leeolayvar.com)",
+  "repository": {
     "type": "git",
     "url": "git://github.com/leeolayvar/tork.git"
-  }],
+  },
+  "bugs": {
+    "url": "http://github.com/leeolayvar/tork/issues"
+  },
   "scripts": {
     "test": "test/index.js"
   },
@@ -18,5 +26,11 @@
     "jquery-browserify": "1.x.x"
   },
   "engine": "node",
-  "main": "./lib/index.js"
+  "main": "./lib/index.js",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/leeolayvar/tork/master/LICENSE"
+    }
+  ]
 }
