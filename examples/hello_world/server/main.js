@@ -6,7 +6,7 @@
 // MIT Licensed 
 //
 /*jshint asi: true, laxcomma: true*/
-var browserify = require('browserify')
+var browserify = require('doubledot-browserify')
   , express = require('express')
 
 var html = '<html><head>'+
