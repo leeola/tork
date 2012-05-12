@@ -185,9 +185,9 @@ describe('tork', function () {
     })
     
     it('should call the callback if all handlers call next()', function (done) {
-      app.all(function (next) { next() })
-      app.all(function (next) { next() })
-      app.all(function (next) { next() })
+      app.all(function (req, next) { next() })
+      app.all(function (req, next) { next() })
+      app.all(function (req, next) { next() })
       app.handle(req, function () { done() })
     })
   })
