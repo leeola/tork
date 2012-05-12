@@ -1,0 +1,14 @@
+{
+  "name": "hello_world",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "server/main.js"
+  },
+  "dependencies": {
+    "express": "2.5.x",
+    
+    "browserify": "1.x.x",
+    "jquery-browserify": "1.x.x"
+  }
+}
