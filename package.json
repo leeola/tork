@@ -1,7 +1,7 @@
 {
   "name": "tork",
   "version": "0.0.0",
-  "description": "",
+  "description": "Client side routing and middleware",
   "author": "leeolayvar <leeolayvar@gmail.com> http://leeolayvar.com",
   "repositories": [{
     "type": "git",
