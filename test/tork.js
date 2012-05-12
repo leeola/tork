@@ -174,8 +174,13 @@ describe('tork', function () {
       app.handle(req, function () { done() })
     })
     
-    it('should call the callback no matching handlers', function (done) {
+    it('should call the callback with no matching handlers', function (done) {
+      // method doesn't match, route does
+      app.put(function () {})
+      // method matches, route does not
       app.all('/foo', function () {})
+      // method and route don't match
+      app.put('/foo', function () {})
       app.handle(req, function () { done() })
     })
     
