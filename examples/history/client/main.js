@@ -29,4 +29,4 @@ app.get('/baz', function (req, client) {
   alert('Hello /baz')
 })
 
-app.listen('http')
+app.listen('http', 'history')
