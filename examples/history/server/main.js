@@ -13,7 +13,7 @@ var html = '<html><head>'+
   '<script type="text/javascript" src="/browserify.js"></script>'+
   '</head><body><h1>History Example</h1><ul>'+
   '<li><a href="/foo">Link /foo</a></li>'+
-  '<li><a href="/bar">Link /bar</a></li>'+
+  '<li><a href="/foo/bar">Link /foo/bar</a></li>'+
   '<li><a href="/baz">Link /baz</a></li>'+
   '</body></html>'
 
