@@ -83,7 +83,7 @@ app.listen(require('./better_than_http'), require('./something_else'))
 Next you would point Browserify to this file, start the server, and
 that's basically it!
 
-For more examples, view the source of `./examples/`
+For more examples, check out [the examples page][examples page]!
 
 ## Middleware
 
@@ -117,3 +117,6 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+
+
+[examples page]: https://github.com/leeolayvar/tork/tree/master/examples
