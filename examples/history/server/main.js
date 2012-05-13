@@ -11,11 +11,10 @@ var browserify = require('doubledot-browserify')
 
 var html = '<html><head>'+
   '<script type="text/javascript" src="/browserify.js"></script>'+
-  '</head><body><h1>Hello World</h1><ul>'+
-  '<li><a id="test" href="/foo">Link /foo</a></li>'+
-  '<li><a href="/bar">Link /bar</a></li>'+
-  '<li><a href="#baz">Link #baz</a></li>'+
-  '<li><a href="#raz">Link #raz</a></li>'+
+  '</head><body><h1>History Example</h1><ul>'+
+  '<li><a href="/foo">Link /foo</a></li>'+
+  '<li><a href="/foo/bar">Link /foo/bar</a></li>'+
+  '<li><a href="/baz">Link /baz</a></li>'+
   '</body></html>'
 
 var app = express.createServer()

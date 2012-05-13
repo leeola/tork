@@ -169,6 +169,27 @@ describe('tork', function () {
       })
       app.handle(req)
     })
+    
+    it('should call the callback with no handlers', function (done) {
+      app.handle(req, function () { done() })
+    })
+    
+    it('should call the callback with no matching handlers', function (done) {
+      // method doesn't match, route does
+      app.put(function () {})
+      // method matches, route does not
+      app.all('/foo', function () {})
+      // method and route don't match
+      app.put('/foo', function () {})
+      app.handle(req, function () { done() })
+    })
+    
+    it('should call the callback if all handlers call next()', function (done) {
+      app.all(function (req, next) { next() })
+      app.all(function (req, next) { next() })
+      app.all(function (req, next) { next() })
+      app.handle(req, function () { done() })
+    })
   })
   
   describe('#listen()', function () {
