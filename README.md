@@ -57,6 +57,17 @@ app.configure('production', function () {
 Middleware is also supported
 
 ```js
+app.use(tork.middleware.history())
+
+app.get('/foo', function (req, client) {
+  client.history.push(req.href)
+  alert('HTML5 and Buzzwords here we come!')
+})
+```
+
+Or roll your own middleware..
+
+```js
 var middleware = function (next) {
   // do stuff
   next()
