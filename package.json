@@ -1,6 +1,6 @@
 {
   "name": "tork",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Client side routing and middleware",
   "keywords": [
     "route",
