@@ -15,17 +15,17 @@ var app = tork()
 app.use(tork.middleware.history())
 
 app.get('/foo', function (req, client) {
-  client.history.push(req.href)
+  client.history.push(req)
   alert('Hello /foo')
 })
 
 app.get('/foo/bar', function (req, client) {
-  client.history.push(req.href)
+  client.history.push(req)
   alert('Hello /foo/bar')
 })
 
 app.get('/baz', function (req, client) {
-  client.history.push(req.href)
+  client.history.push(req)
   alert('Hello /baz')
 })
 
